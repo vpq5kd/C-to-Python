@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-
+#include <cstdlib>
+#include <cmath>
+#include <ctime>
 // here we check if the flag EXTERNC is set, if it is then
 // we will tell the compiler to treat the code below a C code
 // generating the library
@@ -80,8 +82,21 @@ void mandel(double *img, double re1, double re2, double im1, double im2,
 #ifdef EXTERNC
 }
 #endif
-
-
+//HSVolume developed in conjunction with chatGPT
+extern "C" double HSVolume(int d, long long N, double r) {
+	    long long inside = 0;
+	        for (long long i = 0; i < N; ++i) {
+			        double sum = 0.0;
+				        for (int j = 0; j < d; ++j) {
+						            double x = ((double) rand() / RAND_MAX) * 2 * r - r;
+							                sum += x * x;
+									        }
+					        if (sum <= r * r)
+							            inside++;
+						    }
+		    double cube_volume = pow(2 * r, d);
+		        return cube_volume * ((double) inside / N);
+}
 
 
 /*
