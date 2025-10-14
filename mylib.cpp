@@ -83,7 +83,7 @@ void mandel(double *img, double re1, double re2, double im1, double im2,
 }
 #endif
 //HSVolume developed in conjunction with chatGPT
-extern "C" double HSVolume(int d, long long N, double r) {
+ double HSVolume(int d, long long N, double r) {
 	    long long inside = 0;
 	        for (long long i = 0; i < N; ++i) {
 			        double sum = 0.0;
