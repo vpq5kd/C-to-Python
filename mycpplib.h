@@ -40,6 +40,13 @@ class Mandel{
   int _nr, _ni;
   double *_img;  // image buffer
 };
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-int count3d(int n);  
+	int count3d(int n);
+
+#ifdef __cplusplus
+}
+#endif
 #endif // block to ensure header is only compiled once
