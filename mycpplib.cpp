@@ -64,3 +64,14 @@ Mandel::~Mandel(){
   if (_img) delete [] _img;
 }
 
+int count3d(n){
+	int count = 0;
+	for(int i = 0; i<n; i++){
+		for(int j = i+1; j<n; j++){
+			for (int k = j+1; k<n; k++){
+				count+=1; 
+			}
+		}
+	} 
+	return count; 
+}
