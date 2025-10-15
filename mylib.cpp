@@ -97,8 +97,17 @@ void mandel(double *img, double re1, double re2, double im1, double im2,
 		    double cube_volume = pow(2 * r, d);
 		        return cube_volume * ((double) inside / N);
 }
-
-
+ int count3d(int n){
+	        int count = 0;
+		        for(int i = 0; i<n; i++){
+				                for(int j = i+1; j<n; j++){
+							                        for (int k = j+1; k<n; k++){
+											                                count+=1;
+															                        }
+										                }
+						        }
+			        return count;
+}
 /*
 int main(){
   findPi();
